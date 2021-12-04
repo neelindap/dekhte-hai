@@ -6,17 +6,15 @@ import NumberSelector from "./components/NumberSelector";
 import GenreSelector from "./components/GenreSelector";
 import PlatformSelector from "./components/PlatformSelector";
 
-import "./App.css";
-
-function App() {
+const App = () => {
   return (
     <Container className="col-md-5 p-5 mx-auto text-center">
-      <Row>
+      <Row className="mb-5">
         <Col>
           <h3>Aaj dekhte hai</h3>
         </Col>
       </Row>
-      <Row>
+      <Row style={{ fontSize: "1.5rem" }}>
         <Col>
           The <NumberSelector /> movie from the <GenreSelector /> genre on{" "}
           <PlatformSelector />
@@ -24,6 +22,6 @@ function App() {
       </Row>
     </Container>
   );
-}
+};
 
 export default App;
