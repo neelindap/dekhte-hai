@@ -8,6 +8,7 @@ const PlatformSelector = () => {
     { name: "Disney+", color: "#113CCF" },
     { name: "Hulu", color: "#3dbb3d" },
     { name: "Apple TV+", color: "#000" },
+    { name: "HBO Max", color: "#5822b4" },
   ];
   const MS_TO_DISPLAY_PLATFORM = 3000;
 
