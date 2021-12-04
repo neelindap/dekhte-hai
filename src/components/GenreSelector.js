@@ -13,9 +13,9 @@ const GenreSelector = () => {
     "Documentary",
   ];
   const MS_TO_DISPLAY_GENRE = 2000;
-  const selected = useRolling(genres, MS_TO_DISPLAY_GENRE);
+  const selectedIndex = useRolling(genres, MS_TO_DISPLAY_GENRE);
 
-  return <RollingWord selectedValue={genres[selected]} />;
+  return <RollingWord selectedValue={genres[selectedIndex]} />;
 };
 
 export default GenreSelector;

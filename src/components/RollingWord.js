@@ -1,6 +1,6 @@
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-const RollingWord = ({ selectedValue }) => {
+const RollingWord = ({ selectedValue, color = "#000" }) => {
   return (
     <TransitionGroup component="span">
       <CSSTransition
@@ -8,7 +8,9 @@ const RollingWord = ({ selectedValue }) => {
         timeout={{ enter: 100, exit: 100 }}
         unmountOnExit
       >
-        <div className="rolling-word">{selectedValue}</div>
+        <div className="rolling-word font-weight-bold" style={{ color: color }}>
+          {selectedValue}
+        </div>
       </CSSTransition>
     </TransitionGroup>
   );
