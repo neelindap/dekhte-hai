@@ -8,7 +8,7 @@ const RollingWord = ({ selectedValue }) => {
         timeout={{ enter: 100, exit: 100 }}
         unmountOnExit
       >
-        <span>{selectedValue}</span>
+        <div className="rolling-word">{selectedValue}</div>
       </CSSTransition>
     </TransitionGroup>
   );

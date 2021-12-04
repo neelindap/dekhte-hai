@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { randomNumber } from "../libs/randomNumberPicker";
 
-export const useRolling = (values) => {
+export const useRolling = (values, timeout = 1000) => {
   const [selected, setSelected] = useState(0);
 
   const roll = () => {
@@ -17,7 +17,7 @@ export const useRolling = (values) => {
     setTimeout(() => {
       selectedNumber();
       clearInterval(interval);
-    }, 2000);
+    }, timeout);
   }, []);
 
   return selected;
