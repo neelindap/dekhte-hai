@@ -1,5 +1,5 @@
 import { useRolling } from "../hook/useRolling";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import RollingWord from "./RollingWord";
 
 const NumberSelector = () => {
   const numbers = [
@@ -14,20 +14,9 @@ const NumberSelector = () => {
     "ninth",
     "tenth",
   ];
-
   const selected = useRolling(numbers);
 
-  return (
-    <TransitionGroup component="span">
-      <CSSTransition
-        classNames="ctr"
-        timeout={{ enter: 100, exit: 100 }}
-        unmountOnExit
-      >
-        <span>{numbers[selected]}</span>
-      </CSSTransition>
-    </TransitionGroup>
-  );
+  return <RollingWord selectedValue={numbers[selected]} />;
 };
 
 export default NumberSelector;

@@ -1,5 +1,5 @@
 import { useRolling } from "../hook/useRolling";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import RollingWord from "./RollingWord";
 
 const GenreSelector = () => {
   const genres = [
@@ -14,17 +14,7 @@ const GenreSelector = () => {
   ];
   const selected = useRolling(genres);
 
-  return (
-    <TransitionGroup component="span">
-      <CSSTransition
-        classNames="ctr"
-        timeout={{ enter: 100, exit: 100 }}
-        unmountOnExit
-      >
-        <span>{genres[selected]}</span>
-      </CSSTransition>
-    </TransitionGroup>
-  );
+  return <RollingWord selectedValue={genres[selected]} />;
 };
 
 export default GenreSelector;
