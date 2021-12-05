@@ -1,6 +1,4 @@
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
 
 import NumberSelector from "./components/NumberSelector";
 import GenreSelector from "./components/GenreSelector";
@@ -8,19 +6,21 @@ import PlatformSelector from "./components/PlatformSelector";
 
 const App = () => {
   return (
-    <Container className="col-md-5 p-5 mx-auto text-center">
-      <Row className="mb-5">
-        <Col>
-          <h3>Aaj dekhte hai</h3>
-        </Col>
-      </Row>
-      <Row style={{ fontSize: "1.5rem" }}>
-        <Col>
+    <Card
+      bg="light"
+      style={{ width: "18rem", fontSize: "1.5rem" }}
+      className="mx-auto text-center m-5"
+    >
+      <Card.Header>
+        <strong>Let's watch</strong>
+      </Card.Header>
+      <Card.Body>
+        <Card.Text>
           The <NumberSelector /> movie from the <GenreSelector /> genre on{" "}
           <PlatformSelector />
-        </Col>
-      </Row>
-    </Container>
+        </Card.Text>
+      </Card.Body>
+    </Card>
   );
 };
 
