@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react";
 import { randomNumber } from "../libs/randomNumberPicker";
 
-export const useRolling = (values, timeout = 1000) => {
-  const [selected, setSelected] = useState(0);
+export const useRolling = (elements, timeout = 1000) => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const roll = () => {
-    setSelected((prev) => (prev + 1) % values.length);
+    setSelectedIndex((prev) => (prev + 1) % elements);
   };
 
-  const selectedNumber = () => {
-    setSelected(randomNumber(values.length));
+  const setRandomlySelectedIndex = () => {
+    setSelectedIndex(randomNumber(elements));
   };
 
   useEffect(() => {
     const interval = setInterval(roll, 100);
     setTimeout(() => {
-      selectedNumber();
+      setRandomlySelectedIndex();
       clearInterval(interval);
     }, timeout);
   }, []);
 
-  return selected;
+  return selectedIndex;
 };

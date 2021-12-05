@@ -15,7 +15,7 @@ const NumberSelector = () => {
     "tenth",
   ];
   const MS_TO_DISPLAY_NUMBER = 1000;
-  const selectedIndex = useRolling(numbers, MS_TO_DISPLAY_NUMBER);
+  const selectedIndex = useRolling(numbers.length, MS_TO_DISPLAY_NUMBER);
 
   return <RollingWord selectedValue={numbers[selectedIndex]} />;
 };

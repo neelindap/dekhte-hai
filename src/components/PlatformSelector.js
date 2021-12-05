@@ -12,7 +12,7 @@ const PlatformSelector = () => {
   ];
   const MS_TO_DISPLAY_PLATFORM = 3000;
 
-  const selectedIndex = useRolling(platforms, MS_TO_DISPLAY_PLATFORM);
+  const selectedIndex = useRolling(platforms.length, MS_TO_DISPLAY_PLATFORM);
   const platform = platforms[selectedIndex];
 
   return <RollingWord selectedValue={platform.name} color={platform.color} />;
