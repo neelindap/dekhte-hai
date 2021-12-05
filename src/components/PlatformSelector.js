@@ -1,4 +1,4 @@
-import { useRolling } from "../hook/useRolling";
+import { useRolling } from "../hooks/useRolling";
 import RollingWord from "./RollingWord";
 
 const PlatformSelector = () => {
