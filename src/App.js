@@ -25,7 +25,12 @@ const App = () => {
       >
         <Card.Header>
           <strong>Let's watch</strong>{" "}
-          <FontAwesomeIcon icon={faEdit} onClick={handleShow} />
+          <FontAwesomeIcon
+            icon={faEdit}
+            onClick={handleShow}
+            size="xs"
+            className="float-end"
+          />
         </Card.Header>
         <Card.Body>
           <Card.Text>

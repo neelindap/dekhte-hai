@@ -8,7 +8,7 @@ const RollingWord = ({ selectedValue, color = "#000" }) => {
         timeout={{ enter: 100, exit: 100 }}
         unmountOnExit
       >
-        <div className="rolling-word font-weight-bold" style={{ color: color }}>
+        <div className="rolling-word fw-bold" style={{ color: color }}>
           {selectedValue}
         </div>
       </CSSTransition>
