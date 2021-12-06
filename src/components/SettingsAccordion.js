@@ -9,7 +9,7 @@ const SettingsAccordion = ({
 }) => {
   return (
     <Accordion>
-      <Accordion.Item>
+      <Accordion.Item eventKey="0">
         <Accordion.Header>Genres</Accordion.Header>
         <Accordion.Body>
           <Form>
@@ -34,7 +34,7 @@ const SettingsAccordion = ({
           </Form>
         </Accordion.Body>
       </Accordion.Item>
-      <Accordion.Item>
+      <Accordion.Item eventKey="1">
         <Accordion.Header>Platforms</Accordion.Header>
         <Accordion.Body>
           <Form>
