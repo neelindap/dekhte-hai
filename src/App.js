@@ -11,6 +11,7 @@ import PlatformSelector from "./components/PlatformSelector";
 import UpdateModal from "./components/UpdateModal";
 
 const App = () => {
+  const [refreshedAt, setRefreshedAt] = useState(new Date());
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -34,12 +35,17 @@ const App = () => {
         </Card.Header>
         <Card.Body>
           <Card.Text>
-            The <NumberSelector /> movie from the <GenreSelector /> genre on{" "}
-            <PlatformSelector />
+            The <NumberSelector refreshedAt={refreshedAt} /> movie from the{" "}
+            <GenreSelector refreshedAt={refreshedAt} /> genre on{" "}
+            <PlatformSelector refreshedAt={refreshedAt} />
           </Card.Text>
         </Card.Body>
       </Card>
-      <UpdateModal show={show} handleClose={handleClose} />
+      <UpdateModal
+        show={show}
+        handleClose={handleClose}
+        setRefreshedAt={() => setRefreshedAt(new Date())}
+      />
     </>
   );
 };

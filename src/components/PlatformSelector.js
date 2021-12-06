@@ -1,19 +1,18 @@
 import { useRolling } from "../hooks/useRolling";
 import RollingWord from "./RollingWord";
+import { platforms } from "../libs/platforms";
 
-const PlatformSelector = () => {
-  const platforms = [
-    { name: "Netflix", color: "#E50914" },
-    { name: "Amazon Prime Video", color: "#00A8E1" },
-    { name: "Disney+", color: "#113CCF" },
-    { name: "Hulu", color: "#3dbb3d" },
-    { name: "Apple TV+", color: "#000" },
-    { name: "HBO Max", color: "#5822b4" },
-  ];
+const PlatformSelector = ({ refreshedAt }) => {
+  const streamingPlatforms = platforms().filter((platform) => {
+    return platform.selected === true;
+  });
   const MS_TO_DISPLAY_PLATFORM = 3000;
-
-  const selectedIndex = useRolling(platforms.length, MS_TO_DISPLAY_PLATFORM);
-  const platform = platforms[selectedIndex];
+  const selectedIndex = useRolling(
+    streamingPlatforms.length,
+    MS_TO_DISPLAY_PLATFORM,
+    refreshedAt
+  );
+  const platform = streamingPlatforms[selectedIndex];
 
   return <RollingWord selectedValue={platform.name} color={platform.color} />;
 };

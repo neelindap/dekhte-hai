@@ -1,7 +1,7 @@
 import { useRolling } from "../hooks/useRolling";
 import RollingWord from "./RollingWord";
 
-const NumberSelector = () => {
+const NumberSelector = ({ refreshedAt }) => {
   const numbers = [
     "first",
     "second",
@@ -15,7 +15,11 @@ const NumberSelector = () => {
     "tenth",
   ];
   const MS_TO_DISPLAY_NUMBER = 1000;
-  const selectedIndex = useRolling(numbers.length, MS_TO_DISPLAY_NUMBER);
+  const selectedIndex = useRolling(
+    numbers.length,
+    MS_TO_DISPLAY_NUMBER,
+    refreshedAt
+  );
 
   return <RollingWord selectedValue={numbers[selectedIndex]} />;
 };

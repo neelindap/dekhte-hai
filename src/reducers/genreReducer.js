@@ -1,5 +1,4 @@
 export const genreReducer = (state, action) => {
-  console.log(1, action);
   switch (action.type) {
     case "updateSelection": {
       return state.map((genre, index) => {
@@ -10,7 +9,6 @@ export const genreReducer = (state, action) => {
       });
     }
     case "saveChanges": {
-      console.log(1, state);
       localStorage.setItem("genres", JSON.stringify(state));
       return state;
     }
